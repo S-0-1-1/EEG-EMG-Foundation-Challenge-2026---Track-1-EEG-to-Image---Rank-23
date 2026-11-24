@@ -1,0 +1,35 @@
+{
+ "training": {
+   "epochs": 12,
+   "samples_per_epoch": 400000,
+   "batch_size": 256,
+   "lr_head": 0.001,
+   "lr_encoder": 0.0003,
+   "weight_decay": 0.01,
+   "warmup_steps": 300,
+   "grad_clip": 1.0,
+   "temperature": 0.07,
+   "cosine_weight": 0.5,
+   "transport_p": 0.5,
+   "shift_p": 0.5,
+   "shift_max": 2,
+   "blend_p": 0.5,
+   "blend_max": 0.5,
+   "covariance_trials": 3000,
+   "monitor_people": 4,
+   "epoch_hours": 0.0625
+ },
+ "models": [
+  {"name": "blend_things_run1", "start": "things_eeg2", "cosine": "centered", "transport": true, "blend": true, "seed": 0, "folds": true},
+  {"name": "blend_things_run2", "start": "things_eeg2", "cosine": "centered", "transport": true, "blend": true, "seed": 100, "folds": false},
+  {"name": "blend_run1", "start": "labram", "cosine": "centered", "transport": true, "blend": true, "seed": 0, "folds": true},
+  {"name": "blend_run2", "start": "labram", "cosine": "centered", "transport": true, "blend": true, "seed": 100, "folds": false},
+  {"name": "transport_things_run1", "start": "things_eeg2", "cosine": "centered", "transport": true, "blend": false, "seed": 0, "folds": true},
+  {"name": "transport_things_run2", "start": "things_eeg2", "cosine": "centered", "transport": true, "blend": false, "seed": 100, "folds": false},
+  {"name": "transport_run1", "start": "labram", "cosine": "centered", "transport": true, "blend": false, "seed": 0, "folds": true},
+  {"name": "transport_run2", "start": "labram", "cosine": "centered", "transport": true, "blend": false, "seed": 100, "folds": false},
+  {"name": "contrast_run1", "start": "labram", "cosine": "none", "transport": false, "blend": false, "seed": 0, "folds": true},
+  {"name": "centered_things_run1", "start": "things_eeg2", "cosine": "centered", "transport": false, "blend": false, "seed": 0, "folds": true},
+  {"name": "centered_things_run2", "start": "things_eeg2", "cosine": "centered", "transport": false, "blend": false, "seed": 100, "folds": true}
+ ]
+}

@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+data/
+work/
+checkpoints/
+submission/
+submission.zip
+*.npy
+*.pt

@@ -1,0 +1,5 @@
+torch
+torchaudio
+numpy
+pandas
+braindecode[hub]==1.8.1
