@@ -72,30 +72,7 @@ Chance is 0.025 for the first three columns and 0.0030 for the last one. The las
 
 These values were measured during the competition, before the code was reorganized into this repository.
 
-## Repository layout
 
-```
-configs/
-  ensemble.json        the eleven models of the submission
-  things_eeg2.json     the first training stage on THINGS-EEG2
-  baseline.json        the reference model of the results table
-eeg_retrieval/
-  inference.py         network, ensemble and self-test; this file is also the body of submission.py
-  data.py              exported arrays, folds, galleries
-  augment.py           person transport, time shift, same-image blending
-  training.py          loss, optimizer, training loop, one job per GPU
-  metrics.py           ranks with ties, scores for one, two and all presentations
-  train.py             command: train models
-  evaluate.py          command: scores on held-out people
-  package.py           command: build and check the submission file
-  check.py             command: check an existing submission file
-tools/
-  export_dataset.py    arrays and image targets from the organizers' loader
-tests/
-  test_end_to_end.py   every step on small simulated data
-docs/
-  method.md            description of the method
-```
 
 ## Setup
 
