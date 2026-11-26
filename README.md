@@ -174,23 +174,7 @@ python -m eeg_retrieval.check --submission submission.zip --data data/alljoined
 
 For the submitted file (11 models, 183 MB) this check gave a top-5 of 0.4418 on the 200 public test images with all presentations (the 20 people are seen in training here) and 4.1 minutes for 100,000 trials on one T4.
 
-## Reproducibility
 
-- The sealed test set is private. The score of 0.001125 can only be measured by the competition platform.
-- Training on GPU uses half precision and kernels that are not deterministic. Two runs of one configuration give two slightly different models: in the experiments a second seed moved the single-trial top-5 by less than 0.001. A file built with this repository is equivalent to the submitted one, not identical.
-- The two `centered_things` models of the submitted file are two separate training runs of this recipe.
-- This repository is a reorganized version of the code used during the competition. It was compared with the original code on small local data, on CPU. With the same seeds, the training code gives the same weights bit for bit, for the five loss and augmentation variants. The evaluation command gives the same scores, and a file built by the original code passes the self-test of the public inference code. The full training on GPU was not repeated from this version.
-- The stage on THINGS-EEG2 and the export tool are written for release 0.4.0 of the organizers' libraries. The arrays and the stage-one checkpoint behind the submitted models were produced earlier in the project, with an earlier release of these libraries.
-
-## Pretrained models, datasets and licenses
-
-This repository contains code only. Each external resource keeps its own license, which has to be read before use:
-
-- LaBraM weights in the braindecode format: `braindecode/labram-pretrained` on Hugging Face (BSD 3-Clause).
-- Alljoined-1.6M: NEMAR dataset `nm000134` (CC BY-NC-ND 4.0).
-- THINGS-EEG2 (CC BY 4.0) and the THINGS image database (own license).
-- DINOv2-giant: `facebook/dinov2-giant`, used only by the organizers' loader to compute the image targets.
-- Loader and scoring code of the organizers: `neural-interfaces26/2026-competition`, built on NeuralBench.
 
 ## References
 
